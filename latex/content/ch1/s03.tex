@@ -1,0 +1,281 @@
+\section{جبر دوخطی}
+
+\trans{جبر دوخطی}{bilinear algebra}
+مربوط است به
+\trans[منطق‌های دوخطی]{منطق دوخطی}{bilinear logic}.
+این اصطلاح را نخست لمبک معرفی کرد.
+\cite{Lambek:Bilinear}
+
+\begin{definition}
+فرض کنید
+$1 \in \mathcal{T}$
+عضو خنثای ضرب در جبر آیدکیویچ-بارهیلل باشد. یعنی داریم
+$$ 1 \otimes a \leftrightarrow a \leftrightarrow a \otimes 1. $$
+در این صورت این جبر را یک‌دار می‌نامیم.
+\end{definition}
+
+\begin{lemma}
+\label{lemma:1unique}
+اگر 
+$\mathfrak{A}$
+یک‌دار باشد، یک آن یکتا ست.
+\end{lemma}
+\begin{proof}
+داریم
+$1 \leftrightarrow 1 \otimes 1' \leftrightarrow 1'$.
+\end{proof}
+
+\begin{proposition}
+\label{proposition:element1-1}
+برای 
+$a \in \mathcal{A}$
+داریم
+$1 \rightarrow a / a$ 
+و
+$1 \rightarrow a \backslash a$.
+\end{proposition}
+
+\begin{theorem}
+\label{lemma:element1-2}
+برای
+$a \in \mathcal{T}$
+داریم
+$a/1 \leftrightarrow a \leftrightarrow 1 \backslash a$.
+\end{theorem}
+\begin{proof}
+از 
+$a \otimes 1 \rightarrow a$
+و
+$1 \otimes a \rightarrow a$
+به ترتیب داریم
+$a \rightarrow a / 1$
+و
+$a \rightarrow 1 \backslash a$.
+از طرفي داریم
+\[ a/1 \rightarrow (a/1) \otimes 1 \rightarrow a, \]
+و
+\[ 1 \backslash a \rightarrow 1 \otimes (1 \backslash a) \rightarrow a. \]
+\end{proof}
+
+اگر 
+$\mathfrak{A}$
+یک‌دار باشد، تعریف کنید
+$a_\ell \leftrightarrow 1 / a$
+و
+$a_r \leftrightarrow a \backslash 1$.
+از قانون آدیوکیویچ نتیجه می‌شود
+$a_\ell \otimes a \rightarrow 1$
+و
+$a \otimes a_r \rightarrow 1$.
+عکس این دو رابطه درست نیست، در نتیجه نمی‌توان این دو عنصر را وارون‌های چپ و راست نامید.
+برای رسیدن یافتن عنصرهایي بر حسب
+$a$
+که در رابطه‌یي شیبه به عکس رابطه‌های بالا صدق کند، جبرمان را اندکي بیش‌تر محدود می‌کنیم.
+
+\begin{definition}
+فرض کنید عنصر
+$0 \in \mathcal{A}$
+دارای ویژه‌گی
+\[ 0 / (a \backslash 0) \leftrightarrow a \leftrightarrow (0 / a) \backslash 0 \]
+باشد، تعریف می‌کنیم
+\[ a^\ell \leftrightarrow 0 / a, \ \ \ \  a^r \leftrightarrow a \backslash 0. \]
+\end{definition}
+
+طبق تعریف 
+$0$
+داریم
+$a^{r \ell} \leftrightarrow a \leftrightarrow a^{\ell r}$.
+پس برای عنصر
+$a \in \mathcal{T}$
+از به کار بردن چندباری عملگرهای 
+$\cdot^\ell$
+و
+$\cdot^r$
+روی 
+$a$
+زنجیر
+\[ \dots, a^{\ell \ell}, a^\ell, a, a^r, a^{rr}, \dots \]
+پدید می‌آید.
+
+\begin{proposition}
+\label{proposition:order-reversing}
+از 
+$a \rightarrow b$
+نتیجه می‌شود 
+$b^r \rightarrow a^r$
+و
+$b^\ell \rightarrow a^\ell$.
+به سخن دیگر این دو عمل ترتیب را وارونه می‌کنند.
+\end{proposition}
+
+\begin{proof}
+اگر
+$a \rightarrow b$،
+از لم
+\ref{lemma:1-3}
+داریم
+$0/b \rightarrow 0/a$،
+یعنی
+$b^\ell \rightarrow a^\ell$.
+همانند این می‌توان نشان داد
+$b^r \rightarrow a^r$.
+یعنی این دو عمل ترتیب را وارون می‌کنند.
+\end{proof}
+
+\begin{theorem}
+برای هر
+$a, b \in \mathcal{T}$
+داریم
+$(a^\ell \otimes a^\ell)^r \leftrightarrow (a^r \otimes a^r)^\ell$.
+\end{theorem}
+\begin{proof}
+برهان این قضیه از قانون کری استفاده می‌کند.
+\begin{eqnarray}
+(a^\ell \otimes b^\ell)^r &\leftrightarrow& ((0 / a) \otimes (0 / b)) \backslash 0 \nonumber \\
+&\leftrightarrow& (0 / b) \backslash ((0 / a) \backslash 0) \nonumber \\
+&\leftrightarrow& (0 / b) \backslash (0 / (a \backslash 0)) \nonumber \\
+&\leftrightarrow& ((0 / b) \backslash 0) / (a \backslash 0) \nonumber \\
+&\leftrightarrow& (0 / (b \backslash 0)) / (a \backslash 0) \nonumber \\
+&\leftrightarrow& 0 / ((a \backslash 0) \otimes (b \backslash 0)) \nonumber \\
+&\leftrightarrow& (a^r \otimes b^r)^\ell. \nonumber
+\end{eqnarray}
+\end{proof}
+
+\begin{definition}
+برای هر 
+$a, b \in \mathcal{T}$
+تعریف کنید
+\[ a \oplus b \leftrightarrow (b^\ell \otimes a^\ell)^r \leftrightarrow (b^r \otimes a^r)^\ell. \]
+\end{definition}
+
+\begin{lemma}
+داریم
+\begin{enumerate}
+\item
+$1^\ell \leftrightarrow 0 \leftrightarrow 1^r$.
+\item
+$0^\ell \leftrightarrow 1 \leftrightarrow 0^r$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+نخستین بخش نتیجه‌ی بی‌واسطه‌ی قضیه‌ی
+\ref{proposition:element1-1}
+است.
+اکنون از بخش نخست داریم
+$0 \leftrightarrow 1^\ell$.
+از گزاره‌ی
+\ref{proposition:order-reversing}
+نتیجه می‌شود
+$0^r \leftrightarrow 1^{\ell r} \leftrightarrow 1$.
+به همین صورت از
+$0 \leftrightarrow 1^r$.
+داریم
+$0^\ell \leftrightarrow 1^{r \ell} \leftrightarrow 1$.
+\end{proof}
+
+\begin{theorem}
+عنصر 
+$0$
+عضو خنثای 
+$\oplus$
+است.
+\end{theorem}
+\begin{proof}
+برای
+$a \in \mathcal{T}$
+داریم
+\begin{eqnarray}
+0 \oplus a &\leftrightarrow& (a^\ell \otimes 0^\ell)^r \nonumber \\
+&\leftrightarrow& (a^\ell \otimes 1)^r \nonumber \\
+&\leftrightarrow& (a^\ell)^r \nonumber \\
+&\leftrightarrow& a. \nonumber
+\end{eqnarray}
+به همین ترتیب داریم 
+$a \oplus 0 \leftrightarrow a$.
+\end{proof}
+
+بنا بر تعریف این دو عمل به ساده‌گی از قانون آدیوکیویچ نتیجه می‌شود 
+$a^\ell \otimes a \rightarrow 0$
+و
+$a \otimes a^r \rightarrow 0$.
+در رابطه‌ی نخست 
+$a$
+را به صورت 
+$a^{r \ell}$
+بنویسید، و عمل 
+$\cdot^r$
+را روی کل رابطه تأثیر دهید، رابطه‌ی 
+$0^r \rightarrow (a^\ell \otimes a^{r\ell})^r$
+به دست می‌آید، که همان
+$1 \rightarrow a^r \oplus a$
+است.
+همانند همین داریم 
+$1 \rightarrow a \oplus a^\ell$.
+پس قضیه‌ی زیر را می‌توان نوشت.
+
+\begin{theorem}
+\label{theorem:3-compact}
+برای 
+$a, b, c \in \mathcal{T}$
+داریم
+\begin{enumerate}
+\item
+$a^\ell \otimes a \rightarrow 0$،
+\item
+$a \otimes a^r \rightarrow 0$،
+\item
+$1 \rightarrow a \oplus a^\ell$،
+\item
+$1 \rightarrow a^r \oplus a$.
+\end{enumerate}
+\end{theorem}
+
+سپس‌تر در گرامر پیش‌گروهی  به این قضیه بازخواهیم گشت.
+
+\begin{definition}
+چندتایی
+$\mathfrak{B} = (\mathcal{A}, \otimes, /, \backslash, \rightarrow)$
+را یک جبر دوخطی نامیم هر گاه
+$(\langle \mathcal{A} \rangle, \rightarrow)$
+مجموعه‌ی مرتب جرئی و
+$(\langle \mathcal{A} \rangle, \otimes, 1)$
+یک 
+\trans{تکواره}{monoid}
+باشد که
+$1 \in \mathcal{A}$،
+عمل‌های
+$/$
+و
+$\backslash$
+دارای این ویژه‌گی باشند که
+برای هر
+$a, b, c \in \langle \mathcal{A} \rangle$،
+\[
+a \otimes b \rightarrow c
+\ \ \ \ \textrm{اگر تنها و اگر}\ \ \ \ 
+a \rightarrow c / b
+\ \ \ \ \textrm{اگر تنها و اگر}\ \ \ \ 
+b \rightarrow a \backslash c
+\]
+و عنصر 
+$0 \in \mathcal{A}$
+دارای ویژه‌گی
+\begin{equation}
+\label{eq:D}
+0 / (a \backslash 0) \leftrightarrow a \leftrightarrow (0 / a) \backslash 0
+\end{equation}
+برای هر 
+$a \in \langle \mathcal{A} \rangle$
+باشد.
+ویژه‌گی 
+\ref{eq:D}
+را ویژه‌گی 
+\trans{دوگان‌سازی}{dualizing}
+و
+عنصر
+$0$
+را
+\trans{دوگان‌ساز}{dualizer}
+می‌نامند.
+\end{definition}

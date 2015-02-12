@@ -1,0 +1,183 @@
+\section{جبر آیدوکیویچ-بارهیلل}
+
+چندتایی 
+$\mathfrak{A} = (\mathcal{A}, \otimes, /, \backslash, \rightarrow)$
+را در نظر گیرید. مجموعه‌ی 
+$\mathcal{T}$
+را کوچک‌ترین مجموعه‌یي بگیرید که 
+$\mathcal{A}$
+را در بر دارد، و تحت سه عمل 
+$\otimes, /, \backslash$
+بسته است. این سه عمل در واقع صوری اند، و عنصرهای مجموعه‌ی
+$\mathcal{T}$
+به طور نحوی به استقرا ساخته می‌شوند.
+مجموعه‌ی 
+$\mathcal{T}$
+را با
+$\langle \mathcal{A} \rangle$
+نیز نشان می‌دهند.
+مجموعه‌ی
+$\mathcal{T}$
+را \trans{مجموعه‌ی گونه‌ها}{set of types}، و هر 
+$t \in \mathcal{T}$
+را یک \trans{گونه}{type} می‌نامیم.
+مجموعه‌ی
+$\mathcal{A}$
+را نیز مجموعه‌ی گونه‌های \trans{ناشکستنی}{atomic} می‌نامیم.
+
+\begin{definition}
+چندتایی
+$\mathfrak{A}$
+را جبر آیدوکیویچ-بارهیلل می‌نامیم هر گاه
+
+\begin{enumerate}
+\item
+برای هر
+$a, b, c \in \mathcal{T}$
+بداریم
+$(a \otimes b) \otimes c \leftrightarrow a \otimes (b \otimes c)$،
+
+\item 
+برای هر
+$a, b, c \in \mathcal{T}$
+بداریم
+$a \otimes b \rightarrow c$
+اگر و تنها اگر
+$a \rightarrow c/b$
+اگر و تنها اگر
+$b \rightarrow a \backslash c$،
+\item
+عمل 
+$\rightarrow$
+بازتابی و ترایا باشد.
+\end{enumerate}
+\end{definition}
+
+در تعریف بالا،
+$a \leftrightarrow b$
+معادل است با
+$a \rightarrow b$
+و
+$b \rightarrow a$.
+
+\begin{theorem}
+\label{theorem:1-1}
+برای هر
+$a, b, c \in \mathcal{T}$
+رابطه‌های زیر درست اند:
+\begin{enumerate}
+\item
+(قانون آیدوکیویچ)
+$(a / b) \otimes b \rightarrow a$،
+\item 
+(برافرازش گونه)
+$b \rightarrow (a / b) \backslash a$،
+\item
+(طرفین-وسطین)
+$(a / b) \otimes (b / c) \rightarrow a / c$،
+\item
+(قانون \name{گیچ}{Geach})
+$a / b \rightarrow (a / c) / (b / c)$،
+\item
+(قانون \name{کری}{Curry})
+$(c / b) / a \leftrightarrow c / (a \otimes b)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+از بازتابی بودن
+$\rightarrow$
+داریم
+$a / b \rightarrow a / b$
+و از ویژه‌گی دوم جبر آیدوکیویچ-بارهیلل داریم
+$(a / b) \rightarrow a / b$،
+اگر و تنها اگر
+$(a / b) \otimes b \rightarrow a$.
+با استفاده از برابر هم‌ارز دیگر در ویژه‌گی دوم نیز به
+$b \rightarrow (a / b) \backslash a$
+می‌رسیم.
+پس دو رابطه‌ی نخست به همین ساده‌گی برقرار اند. 
+\end{proof}
+
+برای اثبات دیگر بخش‌ها نخست چند لم نیاز است.
+
+\begin{lemma}
+\label{lemma:1-2}
+داریم 
+$(a \backslash b) / c \leftrightarrow a \backslash (b / c)$.
+\end{lemma}
+
+\begin{proof}
+چنان که انتظار داریم، در اثبات این لم باید از ویژه‌گی نخست جبرهای آیدکیویچ-بارهیلل استفاده کنیم.
+پس استراتژی برهان ترادیساندن این دو عملگر به عملگرهای 
+$\otimes$
+است، و سپس بهره‌جویی از ویژه‌گی نخست. این کار به ساده‌گی انجام می‌پذیرد. \\
+بنا بر بازتابی بودن 
+$\rightarrow$
+داریم
+\[ a \backslash (b / c) \rightarrow a \backslash (b / c), \]
+پس با شکستن عمل سمت راست داریم
+\[ a \otimes (a \backslash (b / c)) \rightarrow b / c, \]
+و با بار دیگر شکستن عمل سمت راست و ترادیساندن آن به 
+$\otimes$
+داریم
+\[ (a \otimes (a \backslash (b / c))) \otimes c \rightarrow b. \]
+اکنون از ویژه‌گی نخست داریم
+\[ a \otimes ((a \backslash (b / c)) \otimes c) \rightarrow (a \otimes (a \backslash (b / c))) \otimes c, \]
+و از ترایا بودن 
+$\rightarrow$
+و آمیختن دو رابطه‌ی پیشین به دست می‌آوریم
+\[ a \otimes ((a \backslash (b / c)) \otimes c) \rightarrow b, \]
+با ترادیساندن 
+$\otimes$
+بیرونی به 
+$\backslash$
+می‌رسیم به
+\[ (a \backslash (b / c)) \otimes c \rightarrow a \backslash b. \]
+ترادیساندن عمل
+$\otimes$
+بیرونی این رابطه به 
+$/$
+رابطه‌ی 
+\[ a \backslash (b / c) \rightarrow (a \backslash b) / c \]
+را به دست می‌دهد.
+وارون این رابطه نیز با همین روند ثابت می‌شود، تنها کافی است از 
+\[ (a \backslash b) / c \rightarrow (a \backslash b) / c \]
+بیاغازید.
+\end{proof}
+
+لم اخیر نشان می‌دهد  می‌توان به جای
+$(a \backslash b) / c$
+یا
+$a \backslash (b / c)$
+به ساده‌گی نوشت
+$a \backslash b / c$.
+
+\begin{lemma}
+\label{lemma:1-3}
+برای هر
+$a, b, c, d \in \mathcal{T}$
+اگر
+$a \rightarrow c$
+و
+$b \rightarrow d$
+آن‌گاه
+\begin{enumerate}
+\item
+$a \otimes b \rightarrow c \otimes d$،
+\item
+$a / d \rightarrow c / b$،
+\item
+$d \backslash a \rightarrow b \backslash c$.
+\end{enumerate}
+\end{lemma}
+
+برهان این لم در فصل سپسین داده می‌شود.
+\par
+چنان که در برهان لم 
+\ref{lemma:1-2}
+دیدید، ما از بازتابی بودن 
+$\rightarrow$
+و ویژه‌گی نخست
+چونان \trans{بن‌داشت}{axiom} آغازیدیم، و از دیگر ویژه‌گی‌های جبر آیدکیویچ-بارهیلل چونان قاعده‌های استنتاج بهره بردیم.
+می‌توان این دید را مانند حساب‌های منطقی صورت بست، تا هم برهان‌های درختی ساده‌تر پدید آیند، و هم بهتر بتوان این جبر را مطالعه کرد.

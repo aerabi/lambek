@@ -1,0 +1,129 @@
+\documentclass[MScThesis,twoside]{lambek}
+
+\def\enSubject{Doctor of Philosophy Thesis (Information Technology Major), Computer Engineering Department, Sharif University of Technology, Tehran, I. R. Iran}
+
+\def\enTitle{Lambek Calculus and its Applications to German and Persian Languages}
+\def\enTitleLineOne{Lambek Calculus with Applications}
+\def\enTitleLineTwo{to German and Persian Languages}
+\def\enAuthor{‌Muhammad-Ali A'rabi}
+\def\enKeywords{Pregroup grammar, Lambek calculus, Machine translation}
+
+
+%\input{general/preamble}
+%\addbibresource{resources/resources.bib}
+
+
+\newcommand{\faKeywords}{حساب لمبک،
+زبان‌شناسی محض،
+ترجمه‌ی ماشینی}
+\logo{\includegraphics[scale=.7]{img/logo}}
+\date{آبان ۱۳۹۳}
+\titlelineone{حساب لمبک و کاربردهایش}
+\titlelinetwo{در زبان‌های آلمانی و پارسی}
+\title{حساب لمبک و کاربردهایش در زبان‌های آلمانی و پارسی}
+\author{محمدعلی اعرابی}
+\university{{\Large دانشگاه صنعتی شریف %
+\\}
+دانشکده‌ی علوم ریاضی}
+\normaluniversity{دانشگاه صنعتی شریف\\
+دانشکده‌ی علوم ریاضی}
+\subject{گرایش منطق}
+\supervisor{دکتر محمد اردشیر بهرستاقی}
+\consult{دکتر بهرام وزیرنژاد} 
+
+\newcommand{\efootnote}[1]{\footnote{\lr{#1}}}
+\newcommand{\ecfootnote}[1]{}
+
+
+% ================ Correct hyphenations ================
+\hyphenation{test}
+
+
+\makeglossaries
+%\includeonly{related_works/related_works}
+%\includeonly{evaluation/evaluation}
+
+\begin{document}
+
+
+\newcommand{\StartDocument}{\frontmatter \baselineskip1.2\baselineskip \pagestyle{empty} \null \vfill
+\begin{center}
+\Large{بسم اللّه الرحمن الرحیم}
+\end{center}
+\vfill}
+
+%the initial title is supposed to be printed on the cover.
+%for non final version, you can leave following commands as is to create only one title page (printed on paper)
+%for final version you need to swap folowing commented/uncommented makethesistitle commands to achieve this order: title on the cover THEN in the name of god page THEN another title page but this time printed on paper
+\makethesistitle
+\StartDocument
+%\makethesistitle
+
+\pagestyle{pagenumberonlyPagestyle}
+% following parts are not required in PhD proposal and should be removed. BEGIN OF COMMENT FOR PhD Proposal........
+%صفحه‌ی تصویب در پیشنهاد پژوهشی وجود ندارد.
+\begin{تصویب}
+%خط‌های زیر در صورت نبود استاد مدعو comment شوند
+\داور{استاد مدعو}{دکتر <نام استاد مدعو ۱>}
+\داور{استاد مدعو}{دکتر <نام استاد مدعو ۲>}
+\end{تصویب}
+\newpage
+
+\dedication{\large پیش‌کش به روان ژواخیم لمبک\\و میرشمس‌الدین ادیب‌سلطانی} 
+
+\setlength{\baselineskip}{0.9cm}
+
+\begin{قدردانی}
+صفحه‌ی قدردانی. این صفحه اختیاری بوده و می‌توانید آن را حذف کنید. برای این کار کافی است محیط قدردانی در پرونده‌ی تِک را حذف کنید. متداول است که در این صفحه از خانواده، استادها و همکارهای خود قدردانی نمایید.
+\end{قدردانی}
+% END OF COMMENT FOR PhD Proposal.
+
+\begin{abstract}{\faKeywords}
+\input{general/abstract}
+\end{abstract}
+
+
+\setlength{\baselineskip}{0.9cm}
+\pagenumbering{tartibi}\tableofcontents\listoftables\listoffigures
+%list of abbreviations may be added here...
+
+\mainmatter
+%\PrepareForMainContent
+\input{general/thesis_content}
+
+\appendix
+
+\chapter{فهرست قضیه‌ها}
+
+\backmatter
+
+%\PrepareForBibliography
+
+\setlength{\baselineskip}{0.8cm}
+
+\latin
+
+\bibliographystyle{unsrt}
+\bibliography{resources/resources}
+
+\persian
+
+
+\PrepareForLatinPages
+\date{April 2014}
+\logo{\includegraphics[scale=.4]{img/logo-en}}
+\title{\sffamily\enTitle}
+% uncomment following lines only if you have defined commands for two-lines-title at the beginning of this file
+\titlelineone{\enTitleLineOne}
+\titlelinetwo{\enTitleLineTwo}
+\author{\sffamily\enAuthor\vspace{-1em}}
+\university{\normalfont\bfseries Sharif University of Technology\\Department of Mathematical Sciences}
+\subject{Pure Mathematics}
+\supervisor{\sffamily Prof. Dr. Muhammad Ardeshir\vspace{-1em}}
+%If you don't have a consultant professor, comment following line
+\consult{\sffamily Dr. Bahram Vazirnezhad\vspace{-1em}}
+\begin{abstract}{\enKeywords}
+\input{general/abstract-en}
+\end{abstract}
+\makethesistitle
+\end{document}

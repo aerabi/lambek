@@ -1,0 +1,204 @@
+\section{حساب لمبک}
+
+فرض کنید 
+$\mathfrak{A} = (\mathcal{A}, \otimes, /, \backslash, \rightarrow)$
+یک جبر آیدکیویچ-بارهیلل باشد، و
+$\mathcal{T} = \langle \mathcal{A} \rangle$
+مجموعه‌ی گونه‌ها باشد.
+\begin{definition}
+برای
+$a, b, c \in \mathcal{T}$
+حساب نحوی را با بن‌داشت‌های
+\begin{enumerate}
+\item
+بازتاب 
+$\rightarrow$
+(ویژه‌گی 3-الف):
+$$ a \rightarrow a, $$
+\item
+ویژه‌گی 1-الف:
+$$ (a \otimes b) \otimes c \rightarrow a \otimes (b \otimes c), $$
+\item
+ویژه‌گی 1-ب:
+$$ a \otimes (b \otimes c) \rightarrow (a \otimes b) \otimes c, $$
+\end{enumerate}
+و قاعده‌های استنتاجی 
+\begin{enumerate}
+\item
+ترایایی 
+$\rightarrow$
+(ویژه‌گی 3-ب):
+$$
+\infer[(3)]{a \rightarrow c}{a \rightarrow b & b \rightarrow c}
+$$
+\item
+ویژه‌گی 2:
+$$
+\begin{matrix}
+\infer[(2)]{a \rightarrow c / b}{a \otimes b \rightarrow c}
+\hspace{3em} & \hspace{3em}
+\infer[(2)]{b \rightarrow a \backslash c}{a \otimes b \rightarrow c}
+\\ \vspace{0.1em} \\
+\infer[(2)]{a \otimes b \rightarrow c}{a \rightarrow c / b}
+\hspace{3em} & \hspace{3em}
+\infer[(2)]{a \otimes b \rightarrow c}{b \rightarrow a \backslash c}
+\end{matrix}
+$$
+\end{enumerate}
+تعریف کنید.
+\end{definition}
+
+به روشني یک رابطه در حساب لمبک اثبات‌پذیر است اگر و تنها اگر توسط ویژه‌گی‌های جبرهای آیدکیویچ-بارهیلل باشد.
+اکنون ما به کمک حساب لمبک لم
+\ref{lemma:1-3}
+را ثابت می‌کنیم.
+
+\begin{proof}
+\begin{enumerate}
+\item
+$$
+\infer[(3)]{a \otimes b \rightarrow c \otimes d}{
+    \infer[(2)]{a \otimes b \rightarrow c \otimes b}{
+        \infer[(3)]{a \rightarrow (c \otimes b) / b}{
+            a \rightarrow c
+            &
+            \infer[(2)]{c \rightarrow (c \otimes b) / b}{c \otimes b \rightarrow c \otimes b}
+        }
+    }
+    &
+    \infer[(2)]{c \otimes b \rightarrow c \otimes d}{
+        \infer[(3)]{b \rightarrow c \backslash (c \otimes d)}{
+            b \rightarrow d
+            &
+            \infer[(2)]{d \rightarrow c \backslash (c \otimes d)}{c \otimes d \rightarrow c \otimes d}
+        }
+    }
+}
+$$
+\item
+$$
+\infer[(3)]{a / d \rightarrow c / b}{
+    \infer[(2)]{a / d \rightarrow a / b}{
+        \infer[(2)]{(a / d) \otimes b \rightarrow a}{
+            \infer[(3)]{b \rightarrow (a / d) \backslash a}{
+                b \rightarrow d
+                &
+                \infer={d \rightarrow (a / d) \backslash a}{}
+            }
+        }
+    }
+    &
+    \infer[(2)]{a / b \rightarrow c / b}{
+        \infer[(3)]{(a / b) \otimes b \rightarrow c}{
+            \infer={(a / b) \otimes b \rightarrow a}{}
+            &
+            a \rightarrow c
+        }
+    }
+}
+$$
+\item
+$$
+\infer[(3)]{d \backslash a \rightarrow b \backslash c}{
+    \infer[(2)]{d \backslash a \rightarrow d \backslash c}{
+        \infer[(3)]{d \otimes (d \backslash a) \rightarrow c}{
+            \infer={d \otimes (d \backslash a) \rightarrow a}{}
+            &
+            a \rightarrow c
+        }
+    }
+	&
+	\infer[(2)]{d \backslash c \rightarrow b \backslash c}{
+        \infer[(2)]{b \otimes (d \backslash c) \rightarrow c}{
+            \infer[(3)]{b \rightarrow c / (d \backslash c)}{
+                b \rightarrow d
+                &
+                \infer={d \rightarrow c / (d \backslash c)}{}
+            }
+        }
+    }
+}
+$$
+که در برهان دوم ما از دو بخش نخست قضیه‌ی
+\ref{theorem:1-1}
+بهره جستیم تا درخت اثبات شلوغ نشود.
+هم‌چنین در برهان سوم از صورت دیگر برافرازش گونه بهره بردیم. نگاه کنید به قضیه‌ی
+\ref{theorem:1-1inverse}.
+\end{enumerate}
+\end{proof}
+
+\begin{contract}
+از این پس در حساب لمبک نام قاعده‌ی به‌کار‌رفته را نمی‌نویسیم، زیرا از تعداد گره‌های بالا و پایین آن مشخص می ‌شود.
+هم‌چنین استنتاج‌های دوخطی به معنای به‌کارگیری لم‌ها و قضیه‌های ثابت‌شده اند.
+\end{contract}
+
+اکنون به یاری لم‌های ثابت‌شده بخش‌های دیگر قضیه‌ی
+\ref{theorem:1-1}
+را ثابت می‌کنیم.
+
+\begin{proof}
+
+\begin{enumerate}
+\item[3.]
+$$
+\infer{(a/b)\otimes(b/c) \rightarrow a/c}{
+    \infer{b/c \rightarrow (a/b)\backslash(a/c)}{
+        \infer={b/c \rightarrow ((a / b) \backslash a) / c}{
+            \infer={b \rightarrow (a/b)\backslash a}{}
+            &
+            c \rightarrow c
+        }
+        &
+        \infer={((a/b) \backslash a)/c \rightarrow (a/b)\backslash(a/c)}{}
+    }
+}
+$$
+\item[4.]
+قانون گیچ نتیجه‌ی مستقیم طرفین-وسطین است:
+$$
+\infer{a/b \rightarrow (a /c ) / (b / c)}{
+    \infer={(a/b)\otimes(b/c) \rightarrow a/c}{}
+}
+$$
+\item[5.]
+قانون کری با یک بار به‌کارگیری ویژه‌گی 2 تبدیل می‌شود به
+$((c/b)/a)\otimes(a \otimes b) \rightarrow c$
+که با دو بار به‌کارگیری قانون آیدکیویچ به دست می‌آید.
+\end{enumerate}
+\end{proof}
+
+قضیه‌ی 
+\ref{theorem:1-1}
+بر اساس عملگر 
+$/$
+نوشته شده بود. قانون‌هایي همانند برای عملگر
+$\backslash$
+نیز برقرار اند:
+
+\begin{theorem}
+\label{theorem:1-1inverse}
+برای هر
+$a, b, c \in \mathcal{T}$
+رابطه‌های زیر درست اند:
+\begin{enumerate}
+\item
+(قانون آیدوکیویچ)
+$b \otimes (b \backslash a) \rightarrow a$،
+\item 
+(برافرازش گونه)
+$b \rightarrow a / (b \backslash a)$،
+\item
+(طرفین-وسطین)
+$(a \backslash b) \otimes (b \backslash c) \rightarrow a \backslash c$،
+\item
+(قانون گیچ)
+$a \backslash b \rightarrow (c \backslash a) / (c \backslash b)$.
+\item
+(قانون کری)
+$(a \otimes b) \backslash c \leftrightarrow b \backslash (a \backslash c)$.
+\end{enumerate}
+\end{theorem}
+
+قانون کری به علت دوطرفه بودن ابزار بسیار قدرتمندي در اثبات قضیه‌های سپسین است.
+
+s

@@ -1,0 +1,266 @@
+\section{جبر دوخطی مشبکه‌یی}
+
+ویژه‌گی سوم جبر آیدکیویچ-بارهیلل ایجاب می‌کند
+عملگر
+$\rightarrow$
+یک رابطه‌ی ترتیب جزئی باشد. 
+بنا بر این، می‌توان چهار نماد مشبکه‌یی را برای این عملگر تعریف کرد.
+فرض کنید
+$a \wedge b$
+و
+$a \vee b$
+به ترتیب
+\trans{زیرینه}{infimum}
+و
+\trans{زبرینه}{supremum}
+$a$
+و
+$b$
+را بنمایانند.
+و نیز فرض کنید 
+$\bot$
+و
+$\top$
+\trans{زیر}{bottom}
+و
+\trans{زبر}{top}
+باشند.
+اکنون 
+$\langle \mathcal{T} \rangle_{\mathrm{lattice}}$
+را کوچک‌ترین مجموعه‌یي بگیرید که دارای زیر و زبر است،
+$\mathcal{T}$
+را در خود می‌گنجاند، و تحت زیرینه و زبرینه بسته است.
+
+لمبک در 
+\cite{Lambek:Bilinear}
+اشاره کرده‌است که با افزایاندن سه قاعده‌ی ساختاری دستگاه
+\trans{گنتسن}{Genzen}
+به جبر دوخطی مشبکه‌یی، این جبر به حساب گنتسن بدل می‌شود.
+قضیه‌ی زیر در
+\cite{Lambek:Bilinear}
+بدون اثبات آورده شده‌است، که منظور از این سخنان را بیان می‌کند.
+ما سپس‌تر به دقت این گفته‌ی لمبک را اثبات خواهیم کرد، ولی نخست می‌کوشیم ارتباط نمادهای مشبکه‌یی را به جبر دوخطی مشبکه‌یی بدون این 3 قاعده‌ی ساختاری بیابیم.
+
+\begin{theorem}
+فرض کنید عمل 
+$\otimes$
+جابه‌جایی باشد، یعنی
+$a \otimes b \rightarrow b \otimes a$،
+و نیز بداریم
+$a \rightarrow 1$
+و
+$a \rightarrow a \otimes a$،
+آن‌گاه داریم
+$1 \leftrightarrow \top$،
+$a \otimes b \leftrightarrow a \wedge b$،
+و
+$c / b \leftrightarrow b \backslash c$.
+\end{theorem}
+
+\begin{proof}
+نخست برای هر 
+$a \in \langle \mathcal{T} \rangle_{\mathrm{lattice}}$
+داریم
+$a \rightarrow 1$
+(بنا به فرض)
+و
+$a \rightarrow \top$
+(بنا به مشبکه بودن)،
+پس
+$1 \leftrightarrow \top$.
+از سوی دیگر
+\[
+\infer{a \otimes b \rightarrow a}{
+	\infer={a \otimes b \rightarrow a \otimes 1}{
+		\infer{a \rightarrow a}{}
+		&
+		b \rightarrow 1
+	}
+	&
+	\infer={a \otimes 1 \rightarrow a}{}
+}
+\]
+و به همین سان
+$a \otimes b \rightarrow b$.
+اکنون فرض کنید 
+$c \rightarrow a$
+و
+$c \rightarrow b$،
+داریم
+\[
+\infer{c \rightarrow a \otimes b}{
+	c \rightarrow c \otimes c
+	&
+	\infer={c \otimes c \rightarrow a \otimes b}{
+		c \rightarrow a
+		&
+		c \rightarrow b
+	}
+}
+\]
+پس داریم
+$a \wedge b \leftrightarrow a \otimes b$.
+سومین بخش از حکم نیز از ویژه‌گی آیدکیویچ و جابه‌جایی بودن عمل 
+$\otimes$
+نتیجه می‌شود.
+\end{proof}
+
+\begin{lemma}
+\label{proposition:1iff0}
+داریم
+$1 \leftrightarrow \top$
+اگر و تنها اگر
+$0 \leftrightarrow \bot$.
+\end{lemma}
+
+\begin{proof}
+فرض کنید 
+$1 \leftrightarrow \top$،
+پس برای هر 
+$a \in \langle \mathcal{T} \rangle_{\mathrm{lattice}}$
+داریم 
+$a^\ell \rightarrow 1$،
+پس داریم 
+$0 \leftrightarrow 1^r \rightarrow a^{\ell r} \leftrightarrow a$.
+یعنی
+$0 \leftrightarrow \bot$.
+اکنون به عکس فرض کنید
+$0 \leftrightarrow \bot$،
+پس برای هر 
+$a \in \langle \mathcal{T} \rangle_{\mathrm{lattice}}$
+داریم 
+$0 \rightarrow a^\ell$،
+پس داریم 
+$a \leftrightarrow a^{\ell r} \rightarrow 0^r \leftrightarrow 1$.
+یعنی
+$1 \leftrightarrow \top$.
+\end{proof}
+
+\begin{definition}
+در جبر دوخطی مشبکه‌یی، برای 
+$a \in \langle \mathcal{T} \rangle_{\mathrm{lattice}}$
+تعریف کنید
+$\neg_r a \leftrightarrow a \backslash \bot$
+و
+$\neg_\ell a \leftrightarrow \bot / a$.
+\end{definition}
+
+\begin{lemma}
+\label{lemma:1-neg-0}
+داریم 
+$\neg_r a \rightarrow a^r$
+و
+$\neg_\ell a \rightarrow a^\ell$.
+\end{lemma}
+
+\begin{proof}
+داریم
+$\bot \rightarrow 0$
+و
+$a \rightarrow a$،
+پس از لم
+\ref{lemma:1-3}
+داریم
+$\bot / a \rightarrow 0 / a$
+و
+$a \backslash \bot \rightarrow a \backslash 0$،
+یعنی
+$\neg_\ell a \rightarrow a^\ell$
+و
+$\neg_r a \rightarrow a^r$.
+\end{proof}
+
+\begin{theorem}
+\label{theorem:4-0-bot-1-top}
+داریم
+$1 \leftrightarrow \top$
+و
+$0 \leftrightarrow \bot$.
+\end{theorem}
+
+\begin{proof}
+توجه کنید که 
+$\bot^r \leftrightarrow \bot \backslash 0 \leftrightarrow \neg_\ell 0$.
+پس از لم
+\ref{lemma:1-neg-0}
+داریم
+$\bot^r \leftrightarrow \neg_\ell 0 \rightarrow 0^\ell$.
+از به‌کارگیری عمل
+$\cdot^\ell$
+روی دو سوی نابرابری داریم
+$0^{\ell \ell} \rightarrow \bot^{r \ell} \leftrightarrow \bot$.
+اکنون از
+$0^\ell \rightarrow 1$
+داریم
+$1^\ell \rightarrow 0^{\ell \ell}$،
+یعنی
+$0 \rightarrow 0^{\ell \ell} \rightarrow \bot$.
+پس 
+$0 \rightarrow \bot$.
+یعنی
+$0 \leftrightarrow \bot$
+و از لم
+\ref{proposition:1iff0}
+حکم نتیجه می‌شود.
+\end{proof}
+
+\begin{definition}
+عنصر 
+$c$
+را چرخاننده می‌خوانیم هر گاه برای هر 
+$a, b$
+از
+$a \otimes b \rightarrow c$
+بتوان نتیجه گرفت
+$b \otimes a \rightarrow c$.
+اگر جبر دوخطی دارای عضوي چرخاننده باشد، آن را جبر
+\trans{چرخشی}{cyclic}
+خوانیم.
+\end{definition}
+
+\begin{proposition}
+\label{proposition:cyclic-iff}
+عنصر
+$c$
+چرخاننده است اگر و تنها اگر برای هر
+$a$
+بداریم
+$c / a \leftrightarrow a \backslash c$.
+\end{proposition}
+
+به روشنی در جبر دوخطی مشبکه‌یی، 
+$1$
+یک چرخاننده است. هم‌چنین اگر عمل 
+$\otimes$
+جابه‌جایی باشد، هر عنصر جبرمان چرخاننده است.
+از گزاره‌ی
+\ref{proposition:cyclic-iff}
+داریم 
+$\bot$
+چرخاننده است اگر و تنها اگر
+$a^\ell \leftrightarrow a^r$
+برای هر
+$a \in \langle \mathcal{T} \rangle_{\mathrm{lattice}}$.
+
+\begin{theorem}
+در جبر دوخطی مشبکه‌یی داریم
+$a^\ell \leftrightarrow a^r$
+برای هر
+$a \in \langle \mathcal{T} \rangle_{\mathrm{lattice}}$.
+\end{theorem}
+
+\begin{proof}
+از قضیه‌ی
+\ref{theorem:3-compact}
+داریم
+$a^\ell \otimes a \rightarrow 0$
+و از قضیه‌ی
+\ref{theorem:4-0-bot-1-top}
+داریم
+$0 \rightarrow a^\ell \otimes a$،
+پس داریم
+$a^\ell \otimes a \leftrightarrow 0$.
+به همین صورت
+$a \otimes a^r \leftrightarrow 0$.
+داریم
+\end{proof}
