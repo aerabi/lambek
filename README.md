@@ -1,1 +1,3 @@
 # lambek
+Lambek is a study of pregroup grammar and a machine translation software using that study. The project is named after Joachim Lambek (1922--2014) which died some days after I started this study, and which is somehow the founder of pregroup grammar.
+The project consists of my M.Sc. thesis on "Lambek calculus with applications to German and Persian languages", and some java and scala projects.
